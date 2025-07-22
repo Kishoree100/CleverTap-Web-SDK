@@ -7,6 +7,25 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="manifest" href="./manifest.json">
     <link rel="stylesheet" href="./css/style.css">
+<script>
+  function triggerSmartRedirect() {
+    window.AF_SMART_SCRIPT = {
+      onelink_id: "ulfi4uzl",
+      custom_domain: "kishoree.onelink.me",
+      android_package_name: "com.kishoreetest1.app",
+      ios_app_id: "id1619950106",
+      redirect_type: "web"
+    };
+
+    // Trigger the smart script redirect
+    if (typeof AF_SMART !== "undefined" && AF_SMART.run) {
+      AF_SMART.run(window.AF_SMART_SCRIPT);
+    } else {
+      console.error("AppsFlyer Smart Script not loaded yet.");
+    }
+  }
+</script>    
+
     <script type="text/javascript">
         var clevertap = {
             event: [],
@@ -48,11 +67,12 @@
     
 
     
-    <title> Clever Tap Technical Round</title>
+    <title> Clever Tap Test Website</title>
 </head>
 
 <body>
     <section class="vh-100" style="background-color: #eee;">
+        <button onclick="triggerSmartRedirect()">Download App</button>
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-lg-12 col-xl-11">
