@@ -67,18 +67,30 @@
         })();
     </script>
     <script type="text/javascript" src="./scripts/index.js"></script>
-<script>
-!function(a,e,f,k,h,g,c,b,d){a.AppsFlyerSdkObject=h;a.AF=a.AF||function(){(a.AF.q=a.AF.q||[]).push([Date.now()].concat(Array.prototype.slice.call(arguments)))};a.AF.id=a.AF.id||c;a.AF.plugins={};b=e.createElement(f);d=e.getElementsByTagName(f)[0];b.async=1;b.src="https://websdk.appsflyer.com?"+(0<g.length?"st\x3d"+g.split(",").sort().join(",")+"\x26":"")+(0<c.length?"af_id\x3d"+c:"");d.parentNode.insertBefore(b,d)}(window,document,"script",0,"AF","pba",{pba:{webAppId:"26c2a413-ad7d-43d2-a01e-64e3d9a688a2"}});
 
+    <!-- AppsFlyer Web SDK (updated) -->
+    <script>
+      // Queue — buffers AF() calls until the SDK is ready
+      window.AppsFlyerSdkObject = "AF";
+      window.AF = window.AF || function() {
+        (window.AF.q = window.AF.q || []).push([Date.now()].concat(Array.prototype.slice.call(arguments)));
+      };
+      // Replace WEB_DEV_KEY with your Web SDK ID from AppsFlyer if different
+      window.AF.id = window.AF.id || { pba: { webAppId: "26c2a413-ad7d-43d2-a01e-64e3d9a688a2" } };
+      window.AF.plugins = {};
+
+      var o = document.createElement("script"),
+          p = document.getElementsByTagName("script")[0];
+      o.async = 1;
+      o.src = "https://websdk.appsflyersdk.com?" + "st=pba&af_id=26c2a413-ad7d-43d2-a01e-64e3d9a688a2";
+      p.parentNode.insertBefore(o, p);
     </script>
-    
-     <script>window.onload = function(){
-            AF('pba', 'event', {eventType: 'EVENT', eventCategory: 'conversion',eventName: 'subscription', eventLabel: 'newsletters'});
-        }
-        </script>
-    
+    <script>
+      window.onload = function () {
+        AF('pba', 'event', { eventType: 'EVENT', eventName: 'website_page_loaded' });
+      }
+    </script>
 
-    
     <title> Clever Tap Test Website</title>
 </head>
 
